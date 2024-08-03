@@ -69,10 +69,10 @@ for character in emoji_data:
     for scheme in schemes:
         ALEXMICK.add((emoji, SKOS.inScheme, scheme))
 
-    # skos:closeMatch
+    # skos:exactMatch
     for _, variation in character.skin_variations.items():
         match = URIRef(unified_to_char(variation.unified))
-        ALEXMICK.add((emoji, SKOS.closeMatch, match))
+        ALEXMICK.add((emoji, SKOS.exactMatch, match))
         ALEXMICK.add((match, RDF.type, SKOS.Concept))
         # skos:notation
         ALEXMICK.add((match, SKOS.notation, Literal(variation.unified)))
@@ -81,12 +81,12 @@ for character in emoji_data:
         for scheme in schemes:
             ALEXMICK.add((match, SKOS.inScheme, scheme))
 
-    # skos:broader, skos:narrower
+    # skos:related
     for part in key:
         if part in characters and part != key:
-            broad = URIRef(part)
-            ALEXMICK.add((emoji, SKOS.broader, broad))
-            ALEXMICK.add((broad, SKOS.narrower, emoji))
+            related = URIRef(part)
+            ALEXMICK.add((emoji, SKOS.related, related))
+            ALEXMICK.add((related, SKOS.related, emoji))
 
     # dc:isReplacedBy
     if character.obsoletes:

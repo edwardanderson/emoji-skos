@@ -61,7 +61,6 @@ for key, data in EMOJI_DATA.items():
 
     # dc:identifier
     identifier = sanitise_label(data['en'])
-    # identifier = unidecode(identifier).replace(' ', '-').lower()
     CARPEDM20.add((emoji, DC.identifier, Literal(identifier, lang='en')))
 
     # skos:altLabel
@@ -79,10 +78,10 @@ for key, data in EMOJI_DATA.items():
         label = sanitise_label(label)
         CARPEDM20.add((emoji, SKOS.hiddenLabel, Literal(label, lang='en')))
 
-    # skos:broader, skos:narrower
+    # skos:related
     for part in key:
         if part in characters and part != key:
             if part not in skin_tones:
-                broad = URIRef(part)
-                CARPEDM20.add((emoji, SKOS.broader, broad))
-                CARPEDM20.add((broad, SKOS.narrower, emoji))
+                related = URIRef(part)
+                CARPEDM20.add((emoji, SKOS.related, related))
+                CARPEDM20.add((related, SKOS.related, emoji))
