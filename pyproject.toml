@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools >= 66.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "emoji-skos"
+urls = { project-url = "https://github.com/edwardanderson/emoji-skos" }
+dependencies = [
+    "emoji",
+    "emoji-data-python",
+    "rdflib"
+]
+dynamic = ["version"]
+
+[tool.setuptools.packages.find]
+
+[tool.setuptools.dynamic]
+version = {file = "VERSION"}

@@ -1,0 +1,38 @@
+prefix dc: <http://purl.org/dc/elements/1.1/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+
+construct {
+    ?emoji skos:broader ?person , ?man , ?woman .
+
+    # "man" -> "person".
+    <👨> skos:broader <🧑> .
+    # "woman" -> "person".
+    <👩> skos:broader <🧑> .
+    # "child" -> "person".
+    <👩> skos:broader <🧑> .
+    # "baby" -> "person".
+    <👶> skos:broader <🧑> .
+}
+where {
+    ?emoji a skos:Concept ;
+        dc:identifier ?identifier .
+
+    filter not exists {
+        ?emoji skos:broader ?broad .
+    }
+
+    # {
+    #     filter(strstarts(?identifier, 'person '))
+    #     bind(<🧑> as ?person)
+    # }
+    # union
+    # {
+    #     filter(strstarts(?identifier, 'man '))
+    #     bind(<👨> as ?man)
+    # }
+    # union
+    # {
+    #     filter(strstarts(?identifier, 'woman '))
+    #     bind(<👩> as ?woman)
+    # }
+}
