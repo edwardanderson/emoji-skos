@@ -2,7 +2,7 @@
 
 Builds a [Simple Knowledge Organization System](https://www.w3.org/2004/02/skos/) vocabulary of [emojis](https://unicode.org/emoji/charts/full-emoji-list.html) as an [`rdflib.Graph`](https://rdflib.readthedocs.io/en/stable/apidocs/rdflib.html#rdflib.Graph).
 
-![emoji-skos graph diagram](docs/emoji-skos-woman-firefighter.png)
+![emoji-skos graph diagram](docs/emoji-skos-woman-firefighter.svg)
 
 ## Quickstart
 
