@@ -67,3 +67,7 @@ The SKOS representation is transformed from data provided by the following packa
 
 - <https://github.com/alexmick/emoji-data-python>
 - <https://github.com/carpedm20/emoji>
+
+## Acknowledgements
+
+Unicode Data Files are distributed under the [Unicode License v3](https://www.unicode.org/license.txt) which is included in this repository at [docs/unicode_license_v3.txt](docs/unicode_license_v3.txt).
