@@ -4,6 +4,9 @@ Builds a [Simple Knowledge Organization System](https://www.w3.org/2004/02/skos/
 
 ![Emoji SKOS example diagram](docs/emoji-skos-woman-firefighter.svg)
 
+> [!WARNING]
+> Emoji SKOS is an on-going research project and is not yet ready for use in production.
+
 ## Quickstart
 
 ### Install
