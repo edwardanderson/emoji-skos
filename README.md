@@ -63,5 +63,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 ## Data
 
+The SKOS representation is transformed from data provided by the following packages:
+
 - <https://github.com/alexmick/emoji-data-python>
 - <https://github.com/carpedm20/emoji>
