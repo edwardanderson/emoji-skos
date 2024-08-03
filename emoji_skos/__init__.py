@@ -1,11 +1,11 @@
-from emoji_skos.data import ALEXMICK, CARPEDM20
+from emoji_skos.data import ALEXMICK, CARPEDM20, RELATIONS
 from rdflib import Graph, URIRef
 from rdflib.namespace import SKOS
 
 
 EMOJI_SKOS = Graph()
 
-for graph in [ALEXMICK, CARPEDM20]:
+for graph in [ALEXMICK, CARPEDM20, RELATIONS]:
     EMOJI_SKOS += graph
 
 # :human skos:broader :person

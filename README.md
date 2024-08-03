@@ -47,10 +47,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
         "женщина пожарный"@ru ,
         "kadın itfaiyeci"@tr ,
         "女消防员"@zh ;
-    skos:broader
-        <👩> ,
-        <🚒> ;
-    skos:closeMatch
+    skos:exactMatch
         <👩🏻‍🚒> ,
         <👩🏼‍🚒> ,
         <👩🏽‍🚒> ,
@@ -61,6 +58,9 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
         <https://unicode.org/Public/emoji/4.0> ;
     skos:notation "1F469-200D-1F692" ;
     skos:prefLabel "👩‍🚒" ;
+    skos:related
+        <👩> ,
+        <🚒> ;
 .
 ```
 
@@ -70,6 +70,8 @@ The SKOS representation is transformed from data provided by the following packa
 
 - <https://github.com/alexmick/emoji-data-python>
 - <https://github.com/carpedm20/emoji>
+
+Mappings to other vocabularies are maintained in [emoji_skos/data/relations/relations.json](emoji_skos/data/relations/relations.json).
 
 ## Acknowledgements
 
