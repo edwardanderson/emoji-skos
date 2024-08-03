@@ -2,14 +2,14 @@
 
 Builds a [Simple Knowledge Organization System](https://www.w3.org/2004/02/skos/) vocabulary of [emojis](https://unicode.org/emoji/charts/full-emoji-list.html) as an [`rdflib.Graph`](https://rdflib.readthedocs.io/en/stable/apidocs/rdflib.html#rdflib.Graph).
 
-![emoji-skos graph diagram](docs/emoji-skos-woman-firefighter.svg)
+![Emoji SKOS example diagram](docs/emoji-skos-woman-firefighter.svg)
 
 ## Quickstart
 
 ### Install
 
 ```bash
-pip install emoji-skos
+pip install git+https://github.com/edwardanderson/emoji-skos
 ```
 
 ### Module
