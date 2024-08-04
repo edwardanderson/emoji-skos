@@ -8,7 +8,6 @@ from rdflib import Graph, URIRef, Literal
 from rdflib.namespace import DC, RDF, SKOS
 
 
-
 def sanitise_label(label: str) -> str:
     sanitised = (
         label
@@ -80,8 +79,11 @@ for key, data in EMOJI_DATA.items():
 
     # skos:related
     for part in key:
-        if part in characters and part != key:
-            if part not in skin_tones:
+        if part == key:
+            continue
+
+        if part not in skin_tones:
+            if part in characters:
                 related = URIRef(part)
                 CARPEDM20.add((emoji, SKOS.related, related))
                 CARPEDM20.add((related, SKOS.related, emoji))
