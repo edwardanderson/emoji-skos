@@ -2372,7 +2372,13 @@
     {
       "id": "🇫🇷",
       "identifier": "France",
-      "label": "🇫🇷"
+      "label": "🇫🇷",
+      "exactMatch": [
+        "http://www.wikidata.org/entity/Q43192"
+      ],
+      "subject": [
+        "https://vocab.getty.edu/tgn/1000070"
+      ]
     },
     {
       "id": "🇬🇦",
