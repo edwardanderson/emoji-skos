@@ -3178,8 +3178,11 @@
       "id": "🇺🇸",
       "identifier": "United States",
       "label": "🇺🇸",
-      "subject": [
+      "exactMatch": [
         "http://www.wikidata.org/entity/Q42537"
+      ],
+      "subject": [
+        "https://vocab.getty.edu/tgn/7012149"
       ]
     },
     {
