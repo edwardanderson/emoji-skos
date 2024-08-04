@@ -1,5 +1,5 @@
-# The <https://emoji-data-python.readthedocs.io/en/latest/> contains collection
-# set membership information.
+# The <https://emoji-data-python.readthedocs.io/en/latest/> dataset contains
+# collection set membership information.
 
 
 from emoji_data_python import emoji_data, unified_to_char

@@ -2,6 +2,7 @@
   "@context": {
     "@version": 1.1,
     "dc": "http://purl.org/dc/elements/1.1/",
+    "dcterms": "http://purl.org/dc/terms/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "broadMatch": {
       "@id": "skos:broadMatch",
@@ -11,13 +12,21 @@
       "@id": "skos:exactMatch",
       "@type": "@id"
     },
-    "id": "@id",
     "identifier": {
       "@id": "dc:identifier"
     },
     "label": {
       "@id": "skos:preflabel"
-    }
+    },
+    "related": {
+      "@id": "skos:related",
+      "@type": "@id"
+    },
+    "subject": {
+      "@id": "dcterms:subject",
+      "@type": "@id"
+    },
+    "id": "@id"
   },
   "@graph": [
     {
@@ -3168,7 +3177,10 @@
     {
       "id": "🇺🇸",
       "identifier": "United States",
-      "label": "🇺🇸"
+      "label": "🇺🇸",
+      "subject": [
+        "http://www.wikidata.org/entity/Q42537"
+      ]
     },
     {
       "id": "🇺🇾",
@@ -3638,7 +3650,10 @@
     {
       "id": "🌳",
       "identifier": "deciduous tree",
-      "label": "🌳"
+      "label": "🌳",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300132413"
+      ]
     },
     {
       "id": "🌴",
@@ -3663,7 +3678,10 @@
     {
       "id": "🌷",
       "identifier": "tulip",
-      "label": "🌷"
+      "label": "🌷",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300379705"
+      ]
     },
     {
       "id": "🌸",
@@ -3673,7 +3691,10 @@
     {
       "id": "🌹",
       "identifier": "rose",
-      "label": "🌹"
+      "label": "🌹",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300266246"
+      ]
     },
     {
       "id": "🌺",
@@ -3728,22 +3749,34 @@
     {
       "id": "🍄",
       "identifier": "mushroom",
-      "label": "🍄"
+      "label": "🍄",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300417849"
+      ]
     },
     {
       "id": "🍄‍🟫",
       "identifier": "brown mushroom",
-      "label": "🍄‍🟫"
+      "label": "🍄‍🟫",
+      "broadMatch": [
+        "https://vocab.getty.edu/aat/300417849"
+      ]
     },
     {
       "id": "🍅",
       "identifier": "tomato",
-      "label": "🍅"
+      "label": "🍅",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300266435"
+      ]
     },
     {
       "id": "🍆",
       "identifier": "eggplant",
-      "label": "🍆"
+      "label": "🍆",
+      "broadMatch": [
+        "https://vocab.getty.edu/aat/300311491"
+      ]
     },
     {
       "id": "🍇",
@@ -3753,7 +3786,10 @@
     {
       "id": "🍈",
       "identifier": "melon",
-      "label": "🍈"
+      "label": "🍈",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300266444"
+      ]
     },
     {
       "id": "🍉",
@@ -3768,7 +3804,10 @@
     {
       "id": "🍋",
       "identifier": "lemon",
-      "label": "🍋"
+      "label": "🍋",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300266423"
+      ]
     },
     {
       "id": "🍋‍🟩",
@@ -3778,7 +3817,10 @@
     {
       "id": "🍌",
       "identifier": "banana",
-      "label": "🍌"
+      "label": "🍌",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300266434"
+      ]
     },
     {
       "id": "🍍",
@@ -3788,32 +3830,50 @@
     {
       "id": "🍎",
       "identifier": "red apple",
-      "label": "🍎"
+      "label": "🍎",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300266417"
+      ]
     },
     {
       "id": "🍏",
       "identifier": "green apple",
-      "label": "🍏"
+      "label": "🍏",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300266417"
+      ]
     },
     {
       "id": "🍐",
       "identifier": "pear",
-      "label": "🍐"
+      "label": "🍐",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300435353"
+      ]
     },
     {
       "id": "🍑",
       "identifier": "peach",
-      "label": "🍑"
+      "label": "🍑",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300266272"
+      ]
     },
     {
       "id": "🍒",
       "identifier": "cherries",
-      "label": "🍒"
+      "label": "🍒",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300440730"
+      ]
     },
     {
       "id": "🍓",
       "identifier": "strawberry",
-      "label": "🍓"
+      "label": "🍓",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300375414"
+      ]
     },
     {
       "id": "🍔",
@@ -3828,12 +3888,18 @@
     {
       "id": "🍖",
       "identifier": "meat on bone",
-      "label": "🍖"
+      "label": "🍖",
+      "broadMatch": [
+        "https://vocab.getty.edu/aat/300389813"
+      ]
     },
     {
       "id": "🍗",
       "identifier": "poultry leg",
-      "label": "🍗"
+      "label": "🍗",
+      "broadMatch": [
+        "https://vocab.getty.edu/aat/300389813"
+      ]
     },
     {
       "id": "🍘",
@@ -3868,7 +3934,10 @@
     {
       "id": "🍞",
       "identifier": "bread",
-      "label": "🍞"
+      "label": "🍞",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300262820"
+      ]
     },
     {
       "id": "🍟",
@@ -4248,7 +4317,10 @@
     {
       "id": "🎢",
       "identifier": "roller coaster",
-      "label": "🎢"
+      "label": "🎢",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300007319"
+      ]
     },
     {
       "id": "🎣",
@@ -4288,12 +4360,21 @@
     {
       "id": "🎪",
       "identifier": "circus tent",
-      "label": "🎪"
+      "label": "🎪",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300375138"
+      ],
+      "subject": [
+        "https://vocab.getty.edu/aat/300069235"
+      ]
     },
     {
       "id": "🎫",
       "identifier": "ticket",
-      "label": "🎫"
+      "label": "🎫",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300027381"
+      ]
     },
     {
       "id": "🎬",
@@ -4368,7 +4449,10 @@
     {
       "id": "🎺",
       "identifier": "trumpet",
-      "label": "🎺"
+      "label": "🎺",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300042339"
+      ]
     },
     {
       "id": "🎻",
@@ -5678,7 +5762,10 @@
     {
       "id": "🏘️",
       "identifier": "houses",
-      "label": "🏘️"
+      "label": "🏘️",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300005433"
+      ]
     },
     {
       "id": "🏙",
@@ -5698,7 +5785,11 @@
     {
       "id": "🏚️",
       "identifier": "derelict house",
-      "label": "🏚️"
+      "label": "🏚️",
+      "broadMatch": [
+        "https://vocab.getty.edu/aat/300008055",
+        "https://vocab.getty.edu/aat/300005433"
+      ]
     },
     {
       "id": "🏛",
@@ -5718,7 +5809,10 @@
     {
       "id": "🏜️",
       "identifier": "desert",
-      "label": "🏜️"
+      "label": "🏜️",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300008916"
+      ]
     },
     {
       "id": "🏝",
@@ -5738,7 +5832,10 @@
     {
       "id": "🏞️",
       "identifier": "national park",
-      "label": "🏞️"
+      "label": "🏞️",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300008189"
+      ]
     },
     {
       "id": "🏟",
@@ -5748,12 +5845,18 @@
     {
       "id": "🏟️",
       "identifier": "stadium",
-      "label": "🏟️"
+      "label": "🏟️",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300007271"
+      ]
     },
     {
       "id": "🏠",
       "identifier": "house",
-      "label": "🏠"
+      "label": "🏠",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300005433"
+      ]
     },
     {
       "id": "🏡",
@@ -5763,7 +5866,10 @@
     {
       "id": "🏢",
       "identifier": "office building",
-      "label": "🏢"
+      "label": "🏢",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300007043"
+      ]
     },
     {
       "id": "🏣",
@@ -5773,17 +5879,29 @@
     {
       "id": "🏤",
       "identifier": "post office",
-      "label": "🏤"
+      "label": "🏤",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300006036"
+      ]
     },
     {
       "id": "🏥",
       "identifier": "hospital",
-      "label": "🏥"
+      "label": "🏥",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300006676"
+      ]
     },
     {
       "id": "🏦",
       "identifier": "bank",
-      "label": "🏦"
+      "label": "🏦",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300005214"
+      ],
+      "subject": [
+        "https://vocab.getty.edu/aat/300410327"
+      ]
     },
     {
       "id": "🏧",
@@ -5818,7 +5936,13 @@
     {
       "id": "🏭",
       "identifier": "factory",
-      "label": "🏭"
+      "label": "🏭",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300006232"
+      ],
+      "subject": [
+        "https://vocab.getty.edu/aat/300379421"
+      ]
     },
     {
       "id": "🏮",
@@ -5833,7 +5957,10 @@
     {
       "id": "🏰",
       "identifier": "castle",
-      "label": "🏰"
+      "label": "🏰",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300006891"
+      ]
     },
     {
       "id": "🏳",
@@ -13558,7 +13685,10 @@
     {
       "id": "🔥",
       "identifier": "fire",
-      "label": "🔥"
+      "label": "🔥",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300417275"
+      ]
     },
     {
       "id": "🔦",
@@ -19171,22 +19301,34 @@
     {
       "id": "🥁",
       "identifier": "drum",
-      "label": "🥁"
+      "label": "🥁",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300041729"
+      ]
     },
     {
       "id": "🥂",
       "identifier": "clinking glasses",
-      "label": "🥂"
+      "label": "🥂",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300197085"
+      ]
     },
     {
       "id": "🥃",
       "identifier": "tumbler glass",
-      "label": "🥃"
+      "label": "🥃",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300043257"
+      ]
     },
     {
       "id": "🥄",
       "identifier": "spoon",
-      "label": "🥄"
+      "label": "🥄",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300043149"
+      ]
     },
     {
       "id": "🥅",
@@ -19271,7 +19413,10 @@
     {
       "id": "🥖",
       "identifier": "baguette bread",
-      "label": "🥖"
+      "label": "🥖",
+      "broadMatch": [
+        "https://vocab.getty.edu/aat/300262820"
+      ]
     },
     {
       "id": "🥗",
@@ -19301,7 +19446,11 @@
     {
       "id": "🥜",
       "identifier": "peanuts",
-      "label": "🥜"
+      "label": "🥜",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300411355",
+        "https://vocab.getty.edu/aat/300417337"
+      ]
     },
     {
       "id": "🥝",
@@ -19331,7 +19480,10 @@
     {
       "id": "🥢",
       "identifier": "chopsticks",
-      "label": "🥢"
+      "label": "🥢",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300200657"
+      ]
     },
     {
       "id": "🥣",
@@ -19346,7 +19498,10 @@
     {
       "id": "🥥",
       "identifier": "coconut",
-      "label": "🥥"
+      "label": "🥥",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300262559"
+      ]
     },
     {
       "id": "🥦",
@@ -19386,7 +19541,10 @@
     {
       "id": "🥭",
       "identifier": "mango",
-      "label": "🥭"
+      "label": "🥭",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300266436"
+      ]
     },
     {
       "id": "🥮",
@@ -19396,7 +19554,10 @@
     {
       "id": "🥯",
       "identifier": "bagel",
-      "label": "🥯"
+      "label": "🥯",
+      "broadMatch": [
+        "https://vocab.getty.edu/aat/300262820"
+      ]
     },
     {
       "id": "🥰",
@@ -21041,17 +21202,26 @@
     {
       "id": "🧑‍✈️",
       "identifier": "pilot",
-      "label": "🧑‍✈️"
+      "label": "🧑‍✈️",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300236293"
+      ]
     },
     {
       "id": "🧑‍🌾",
       "identifier": "farmer",
-      "label": "🧑‍🌾"
+      "label": "🧑‍🌾",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300025607"
+      ]
     },
     {
       "id": "🧑‍🍳",
       "identifier": "cook",
-      "label": "🧑‍🍳"
+      "label": "🧑‍🍳",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300248012"
+      ]
     },
     {
       "id": "🧑‍🍼",
@@ -24161,7 +24331,10 @@
     {
       "id": "🧬",
       "identifier": "dna",
-      "label": "🧬"
+      "label": "🧬",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300379678"
+      ]
     },
     {
       "id": "🧭",
@@ -24171,12 +24344,18 @@
     {
       "id": "🧮",
       "identifier": "abacus",
-      "label": "🧮"
+      "label": "🧮",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300263522"
+      ]
     },
     {
       "id": "🧯",
       "identifier": "fire extinguisher",
-      "label": "🧯"
+      "label": "🧯",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300024797"
+      ]
     },
     {
       "id": "🧰",
@@ -24221,17 +24400,26 @@
     {
       "id": "🧸",
       "identifier": "teddy bear",
-      "label": "🧸"
+      "label": "🧸",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300211334"
+      ]
     },
     {
       "id": "🧹",
       "identifier": "broom",
-      "label": "🧹"
+      "label": "🧹",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300024758"
+      ]
     },
     {
       "id": "🧺",
       "identifier": "basket",
-      "label": "🧺"
+      "label": "🧺",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300194498"
+      ]
     },
     {
       "id": "🧻",
@@ -24251,7 +24439,10 @@
     {
       "id": "🧾",
       "identifier": "receipt",
-      "label": "🧾"
+      "label": "🧾",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300027573"
+      ]
     },
     {
       "id": "🧿",
@@ -24261,7 +24452,10 @@
     {
       "id": "🩰",
       "identifier": "ballet shoes",
-      "label": "🩰"
+      "label": "🩰",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300417860"
+      ]
     },
     {
       "id": "🩱",
@@ -24311,7 +24505,10 @@
     {
       "id": "🩺",
       "identifier": "stethoscope",
-      "label": "🩺"
+      "label": "🩺",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300395598"
+      ]
     },
     {
       "id": "🩻",
@@ -24396,7 +24593,10 @@
     {
       "id": "🪕",
       "identifier": "banjo",
-      "label": "🪕"
+      "label": "🪕",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300042013"
+      ]
     },
     {
       "id": "🪖",
@@ -24406,7 +24606,10 @@
     {
       "id": "🪗",
       "identifier": "accordion",
-      "label": "🪗"
+      "label": "🪗",
+      "exactMatch": [
+        "https://vocab.getty.edu/aat/300042819"
+      ]
     },
     {
       "id": "🪘",

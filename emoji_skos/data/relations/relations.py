@@ -24,6 +24,8 @@ for obj in data['@graph']:
         if predicate not in predicate_uris:
             predicate_uri = from_n3(context[predicate]['@id'])
             predicate_uris[predicate] = predicate_uri
+        else:
+            predicate_uri = predicate_uris[predicate]
 
         values = obj[predicate]
         if not isinstance(values, list):
