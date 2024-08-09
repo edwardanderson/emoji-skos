@@ -2,8 +2,6 @@
 
 Builds a [Simple Knowledge Organization System](https://www.w3.org/2004/02/skos/) vocabulary of [emojis](https://unicode.org/emoji/charts/full-emoji-list.html) as an [`rdflib.Graph`](https://rdflib.readthedocs.io/en/stable/apidocs/rdflib.html#rdflib.Graph).
 
-![Emoji SKOS example diagram](docs/emoji-skos-woman-firefighter.svg)
-
 > [!WARNING]
 > Emoji SKOS is an on-going research project and is not yet ready for use in production.
 
@@ -13,6 +11,16 @@ Builds a [Simple Knowledge Organization System](https://www.w3.org/2004/02/skos/
 
 ```bash
 pip install git+https://github.com/edwardanderson/emoji-skos
+```
+
+### CLI
+
+```bash
+emoji-skos 👩‍🚒
+```
+
+```bash
+emoji-skos woman firefighter
 ```
 
 ### Module
@@ -47,20 +55,17 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
         "женщина пожарный"@ru ,
         "kadın itfaiyeci"@tr ,
         "女消防员"@zh ;
-    skos:exactMatch
-        <👩🏻‍🚒> ,
-        <👩🏼‍🚒> ,
-        <👩🏽‍🚒> ,
-        <👩🏾‍🚒> ,
-        <👩🏿‍🚒> ;
     skos:inScheme
         <https://unicode.org/Public/9.0.0> ,
         <https://unicode.org/Public/emoji/4.0> ;
     skos:notation "1F469-200D-1F692" ;
     skos:prefLabel "👩‍🚒" ;
     skos:related
-        <👩> ,
-        <🚒> ;
+        <👩🏻‍🚒> ,
+        <👩🏼‍🚒> ,
+        <👩🏽‍🚒> ,
+        <👩🏾‍🚒> ,
+        <👩🏿‍🚒> ;
 .
 ```
 
