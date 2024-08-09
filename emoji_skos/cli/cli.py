@@ -35,7 +35,7 @@ def main():
         with open(path, 'rb') as file:
             EMOJI_SKOS = pickle.load(file)
     else:
-        from emoji_skos import EMOJI_SKOS
+        from emoji_skos.data import EMOJI_SKOS
 
         with open(path, 'wb') as file:
             pickle.dump(EMOJI_SKOS, file)
