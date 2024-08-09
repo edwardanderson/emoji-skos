@@ -36,21 +36,6 @@ languages = [
     'zh'
 ]
 
-skin_tones = [
-    '🏻', # light
-    '🏼', # medium light
-    '🏽', # medium
-    '🏾', # medium dark
-    '🏿', # dark
-]
-
-characters = set()
-for character in emoji_data:
-    key = unified_to_char(character.unified)
-    characters.add(key)
-    for variation in character.skin_variations:
-        characters.add(variation)
-
 for key, data in EMOJI_DATA.items():
     emoji = URIRef(key)
     CARPEDM20.add((emoji, RDF.type, SKOS.Concept))
@@ -65,25 +50,15 @@ for key, data in EMOJI_DATA.items():
     # skos:altLabel
     for language in languages:
         label = data.get(language)
-        if not label:
-            continue
+        if label:
+            label = sanitise_label(label)
+            CARPEDM20.add((emoji, SKOS.altLabel, Literal(label, lang=language)))
 
-        label = sanitise_label(label)
-        CARPEDM20.add((emoji, SKOS.altLabel, Literal(label, lang=language)))
-
-    # skos:altLabel
+    # skos:hiddenLabel
     aliases = data.get('alias', [])
     for label in aliases:
         label = sanitise_label(label)
         CARPEDM20.add((emoji, SKOS.hiddenLabel, Literal(label, lang='en')))
 
-    # skos:related
-    for part in key:
-        if part == key:
-            continue
-
-        if part not in skin_tones:
-            if part in characters:
-                related = URIRef(part)
-                CARPEDM20.add((emoji, SKOS.related, related))
-                CARPEDM20.add((related, SKOS.related, emoji))
+if __name__ == '__main__':
+    print(CARPEDM20.serialize(format='longturtle'))

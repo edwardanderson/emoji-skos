@@ -50,8 +50,9 @@ characters = set()
 for character in emoji_data:
     key = unified_to_char(character.unified)
     characters.add(key)
-    for variation in character.skin_variations:
-        characters.add(variation)
+    for unified, variation in character.skin_variations.items():
+        variation_character = unified_to_char(variation.unified)
+        characters.add(variation_character)
 
 categories = {}
 for character in emoji_data:
@@ -69,24 +70,28 @@ for character in emoji_data:
     for scheme in schemes:
         ALEXMICK.add((emoji, SKOS.inScheme, scheme))
 
-    # skos:exactMatch
-    for _, variation in character.skin_variations.items():
-        match = URIRef(unified_to_char(variation.unified))
-        ALEXMICK.add((emoji, SKOS.exactMatch, match))
-        ALEXMICK.add((match, RDF.type, SKOS.Concept))
-        # skos:notation
-        ALEXMICK.add((match, SKOS.notation, Literal(variation.unified)))
-        # skos:inScheme
-        schemes = get_schemes(float(variation.added_in))
-        for scheme in schemes:
-            ALEXMICK.add((match, SKOS.inScheme, scheme))
+    # Agggregate collection membership references.
+    category = character.category
+    try:
+        categories[category].append(key)
+    except KeyError:
+        categories[category] = [key]
 
-    # skos:related
-    for part in key:
-        if part in characters and part != key:
-            related = URIRef(part)
-            ALEXMICK.add((emoji, SKOS.related, related))
-            ALEXMICK.add((related, SKOS.related, emoji))
+    # :emoji skos:related :skin-variation
+    for _, skin_variation in character.skin_variations.items():
+        variation_key = unified_to_char(skin_variation.unified)
+        variation = URIRef(variation_key)
+        ALEXMICK.add((emoji, SKOS.related, variation))
+        ALEXMICK.add((variation, RDF.type, SKOS.Concept))
+        ALEXMICK.add((variation, SKOS.related, emoji))
+        # skos:notation
+        ALEXMICK.add((variation, SKOS.notation, Literal(skin_variation.unified)))
+        # skos:inScheme
+        schemes = get_schemes(float(skin_variation.added_in))
+        for scheme in schemes:
+            ALEXMICK.add((variation, SKOS.inScheme, scheme))
+
+        categories[category].append(variation_key)
 
     # dc:isReplacedBy
     if character.obsoletes:
@@ -98,13 +103,6 @@ for character in emoji_data:
         replacement = unified_to_char(character.obsoleted_by)
         ALEXMICK.add((emoji, DCTERMS.isReplacedBy, URIRef(replacement)))
 
-    # Agggregate collection membership references.
-    category = character.category
-    try:
-        categories[category].append(key)
-    except KeyError:
-        categories[category] = [key]
-
 # skos:Collection
 for category_label, members in categories.items():
     identifier = (
@@ -113,7 +111,7 @@ for category_label, members in categories.items():
         .replace('&', 'and')
         .lower()
     )
-    category = URIRef(f'collection/{identifier}')
+    category = URIRef(identifier)
     label = Literal(category_label, lang='en')
     ALEXMICK.add((category, RDF.type, SKOS.Collection))
     ALEXMICK.add((category, SKOS.prefLabel, label))
@@ -121,3 +119,7 @@ for category_label, members in categories.items():
     # skos:member
     for member in members:
         ALEXMICK.add((category, SKOS.member, URIRef(member)))
+
+
+if __name__ == '__main__':
+    print(ALEXMICK.serialize(format='longturtle'))

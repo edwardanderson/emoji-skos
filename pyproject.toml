@@ -16,3 +16,6 @@ dynamic = ["version"]
 
 [tool.setuptools.dynamic]
 version = {file = "VERSION"}
+
+[project.scripts]
+emoji-skos = "emoji_skos.cli.cli:main"

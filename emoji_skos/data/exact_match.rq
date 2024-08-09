@@ -1,9 +1,9 @@
 prefix dc: <http://purl.org/dc/elements/1.1/>
-prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
 
 construct {
-  ?a owl:sameAs ?b .
-  ?b owl:sameAs ?a .
+  ?a skos:exactMatch ?b .
+  ?b skos:exactMatch ?a .
 }
 where {
   ?a dc:identifier ?identifier .
