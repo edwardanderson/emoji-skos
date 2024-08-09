@@ -7,7 +7,6 @@ from rdflib import Graph, Literal, URIRef
 from rdflib.namespace import DCTERMS, RDF, SKOS
 
 
-
 def get_schemes(version: float) -> list[URIRef]:
     schemes = []
 
